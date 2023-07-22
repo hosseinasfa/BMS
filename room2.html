@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name='"room2".setpointT' -->
+
+<!-- AWP_In_Variable Name='"room2".lamp1on' -->
+<!-- AWP_Enum_Def Name="lamp1r2value" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"room2".lamp2on' -->
+<!-- AWP_Enum_Def Name="lamp2r2value" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"room2".lamp3on' -->
+<!-- AWP_Enum_Def Name="lamp3r2value" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"room2".lamp4on' -->
+<!-- AWP_Enum_Def Name="lamp4r2value" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"room2".lamp4on' -->
+<!-- AWP_Enum_Def Name="lamp4r2value" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"room2".windowopen' -->
+<!-- AWP_Enum_Def Name="windowr2value" Values='0:"OFF", 1:"ON"' -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 2</title>
+    <link href="images/home-icon.png" rel="icon">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.v4.4.1.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/room2.js"></script>
+
+    <script>
+        /* Time */
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            // add a zero in front of numbers<10
+            m = checkTime(m);
+            document.getElementById('time').innerHTML = h + ":" + m;
+            t = setTimeout(function () {
+                startTime()
+            }, 500);
+        }
+
+        setTimeout(function () {
+
+            /* Lustre */
+            var lustre2 = document.getElementById('lustre22r2').innerHTML;
+            if (lustre2 == 'ON') {
+                document.getElementById('lustre23r2').style.backgroundColor = "#009b19";
+                document.getElementById('lustre25r2').style.backgroundPosition = "65.7097% 0.0493218%";
+            } else {
+                document.getElementById('lustre23r2').style.backgroundColor = "#9b0000";
+                document.getElementById('lustre25r2').style.backgroundPosition = "65.1822% 0.0493218%";
+            }
+
+            var lustre1 = document.getElementById('lustre12r2').innerHTML;
+            if (lustre1 == 'ON') {
+                document.getElementById('lustre13r2').style.backgroundColor = "#009b19";
+                document.getElementById('lustre15r2').style.backgroundPosition = "65.7097% 0.0493218%";
+            } else {
+                document.getElementById('lustre13r2').style.backgroundColor = "#9b0000";
+                document.getElementById('lustre15r2').style.backgroundPosition = "65.1822% 0.0493218%";
+            }
+
+            /* Curtain */
+            var curtain = document.getElementById('curtain2r2').innerHTML;
+            if (curtain == 'ON') {
+                document.getElementById('curtain3r2').style.backgroundColor = "#009b19";
+                document.getElementById('curtain5r2').style.backgroundPosition = "44.1765% 0.0506842%";
+            } else {
+                document.getElementById('curtain3r2').style.backgroundColor = "#9b0000";
+                document.getElementById('curtain5r2').style.backgroundPosition = "42.3244% 0.0506842%";
+            }
+            /* Wall-lamp */
+            var wlight = document.getElementById('wlight2r2').innerHTML;
+            if (wlight == 'ON') {
+                document.getElementById('wlight3r2').style.backgroundColor = "#009b19";
+                document.getElementById('wlight5r2').style.backgroundPosition = "58.9932% 0.0506842%";
+            } else {
+                document.getElementById('wlight3r2').style.backgroundColor = "#9b0000";
+                document.getElementById('wlight5r2').style.backgroundPosition = "57.1411% 0.0506842%";
+            }
+            /* Hidden-lamp */
+            var hlight = document.getElementById('hlight2r2').innerHTML;
+            if (hlight == 'ON') {
+                document.getElementById('hlight3r2').style.backgroundColor = "#009b19";
+                document.getElementById('hlight5r2').style.backgroundPosition = "51.5848% 0.0506842%";
+            } else {
+                document.getElementById('hlight3r2').style.backgroundColor = "#9b0000";
+                document.getElementById('hlight5r2').style.backgroundPosition = "49.7328% 0.0506842%";
+            }
+            /* Halogen */
+            var halogen = document.getElementById('halogen2r2').innerHTML;
+            if (halogen == 'ON') {
+                document.getElementById('halogen3r2').style.backgroundColor = "#009b19";
+                document.getElementById('halogen5r2').style.backgroundPosition = "47.8807% 0.0506842%";
+            } else {
+                document.getElementById('halogen3r2').style.backgroundColor = "#9b0000";
+                document.getElementById('halogen5r2').style.backgroundPosition = "46.0286% 0.0506842%";
+            }
+
+        }, 500);
+
+
+    </script>
+
+
+</head>
+<body onload="startTime()" class="bgroom2">
+<div class="kitchenheader">
+    <div class="roomtitle">اتاق خواب 2</div>
+    <a href="index.html">
+        <div class="homepageimg">
+            <div class="homepage"></div>
+        </div>
+    </a>
+    <div class="time" id="time"></div>
+</div>
+<div class="container-fluid">
+    <iframe class="iframeroom" src="adtroom2.html">
+
+    </iframe>
+    <div class="row margintoprow1">
+        <div class="col-md-4 offset-md-4 col-10 offset-1">
+            <div class="setpointkitchen shadow-lg">
+                <div class="conditionerimg">
+                    <div class="air-conditioner"></div>
+                </div>
+                <div class="formsetpointkitchen">
+                    <form id="settemp1r2" method="post" action="" onsubmit=" return check();">
+                        <button type="submit" class="settemp shadow-lg">ثبت</button>
+                        <input id="settemp2r2" type="text" name='"room2".setpointT' class="inputtemp shadow-lg"
+                               placeholder="تنظیم دما">
+                    </form>
+                    <div class="tempkitchen">
+                        <div class="thermometer">
+                            <div class="thermometers"></div>
+                        </div>
+                        <span id="settemp3r2" class="tempdeg"></span>
+                        <span class="degsymbol shadow-lg">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margintoprow1">
+        <div class="adjust"></div>
+        <div class="col-md-2 col-8 chandelierkitchen shadow-lg">
+            <div class="chandelierimg">
+                <div class="chandelier-on"></div>
+            </div>
+            <p>لوستر</p>
+            <div class="pol shadow-lg">
+                <div hidden id="lustre21r2">
+                    <!-- AWP_Enum_Ref Name='"room2".lamp2cmd' Enum="lamp2r2value" -->
+                    <span id="lustre22r2">:="room2".lamp2cmd:</span>
+                </div>
+                <form id="lustre26r2">
+                    <button id="lustre23r2" type="submit" class="lamp2">
+                        <div class="lampimg">
+                            <div id="lustre25r2" class="lamp-off"></div>
+                        </div>
+                        <div class="lamptext">لامپ 2</div>
+                        <input id="lustre24r2" type="hidden" name='"room2".lamp2on' value=""/>
+                    </button>
+                </form>
+                <div hidden id="lustre11r2">
+                    <!-- AWP_Enum_Ref Name='"room2".lamp1cmd' Enum="lamp1r2value" -->
+                    <span id="lustre12r2">:="room2".lamp1cmd:</span>
+                </div>
+                <form id="lustre16r2">
+                    <button id="lustre13r2" type="submit" class="lamp1">
+                        <div class="lampimg">
+                            <div id="lustre15r2" class="lamp-off"></div>
+                        </div>
+                        <div class="lamptext">لامپ 1</div>
+                        <input id="lustre14r2" type="hidden" name='"room2".lamp1on' value=""/>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div hidden id="curtain1r2">
+            <!-- AWP_Enum_Ref Name='"room2".openwindowcmd' Enum="windowr2value" -->
+            <span id="curtain2r2">:="room2".openwindowcmd:</span>
+        </div>
+        <form id="curtain6r2" method="post" class="col-md-2 offset-md-0 col-5 offset-1 margintopform">
+            <button id="curtain3r2" type="submit" class="curtainkitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="curtain5r2" class="curtain-off"></div>
+                </div>
+                <p>پرده</p>
+                <input id="curtain4r2" type="hidden" name='"room2".windowopen' value=""/>
+            </button>
+        </form>
+        <div hidden id="wlight1r2">
+            <!-- AWP_Enum_Ref Name='"room2".lamp5cmd' Enum="lamp5r2value" -->
+            <span id="wlight2r2">:="room2".lamp5cmd:</span>
+        </div>
+        <form id="wlight6r2" method="post" class="col-md-2 col-5">
+            <button id="wlight3r2" type="submit" class="hlightkitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="wlight5r2" class="wall-lamp-off"></div>
+                </div>
+                <p>نور دیواری</p>
+                <input id="wlight4r2" type="hidden" name='"room2".lamp5on' value=""/>
+            </button>
+        </form>
+        <div hidden id="hlight1r2">
+            <!-- AWP_Enum_Ref Name='"room2".lamp4cmd' Enum="lamp4r2value" -->
+            <span id="hlight2r2">:="room2".lamp4cmd:</span>
+        </div>
+        <form id="hlight6r2" method="post" class="col-md-2 offset-md-0 col-5 offset-1 margintopform">
+            <button id="hlight3r2" type="submit" class="halogen2kitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="hlight5r2" class="hlight-off"></div>
+                </div>
+                <p>نور مخفی</p>
+                <input id="hlight4r2" type="hidden" name='"room2".lamp4on' value=""/>
+            </button>
+        </form>
+        <div hidden id="halogen1r2">
+            <!-- AWP_Enum_Ref Name='"room2".lamp3cmd' Enum="lamp3r2value" -->
+            <span id="halogen2r2">:="room2".lamp3cmd:</span>
+        </div>
+        <form id="halogen6r2" method="post" class="col-md-2 col-5">
+            <button id="halogen3r2" type="submit" class="halogen1kitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="halogen5r2" class="halogen-off"></div>
+                </div>
+                <p>هالوژن</p>
+                <input id="halogen4r2" type="hidden" name='"room2".lamp3on' value=""/>
+            </button>
+        </form>
+        <div class="col-1"></div>
+    </div>
+</div>
+</body>
+</html>

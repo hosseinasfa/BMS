@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.v4.4.1.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        setInterval("refreshtempr1();refreshdetectorr1();", 500);
+
+        /* Temperature */
+        function refreshtempr1() {
+            $('#temp1r1').load(location.href + ' #temp2r1');
+            var temp1 = document.getElementById('temp2r1').innerHTML;
+            document.getElementById('temp3r1').innerHTML = temp1;
+        }
+
+        /* Detector */
+        function refreshdetectorr1() {
+            $('#detector1r1').load(location.href + ' #detector2r1');
+            var text1 = document.getElementById('detector2r1').innerHTML;
+            if (text1 == '1') {
+                document.getElementById('detector3r1').style.backgroundColor = "#9b0000";
+            } else {
+                document.getElementById('detector3r1').style.backgroundColor = "#009b19";
+            }
+        }
+    </script>
+</head>
+<body class="bgadt">
+<div class="container-fluid">
+<div class="row margintoprow1">
+    <div class="col-md-4 col-1"></div>
+    <div class="col-md-2 col-4">
+        <div class="tempraturegeneral shadow-lg">
+            <div hidden id="temp1r1">
+                <span hidden id="temp2r1">:="room1".Tsensor:</span>
+            </div>
+            <span id="temp3r1" class="tempdeggeneral"></span>
+            <span class="degsymbolgeneral1">0c</span>
+        </div>
+    </div>
+    <div class="d-md-none col-1"></div>
+    <div class="col-md-2 col-4">
+        <div class="detectorgeneral shadow-lg">
+            <div class="thiefimg">
+                <div class="detector"></div>
+            </div>
+            <div hidden id="detector1r1">
+                <span hidden id="detector2r1">:="room1".eye1:</span>
+            </div>
+            <span id="detector3r1" class="circle"></span>
+            <p>ردیاب</p>
+        </div>
+    </div>
+    <div class="col-md-4 col-2"></div>
+</div>
+</div>
+</body>
+</html>

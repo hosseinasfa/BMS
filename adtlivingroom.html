@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.v4.4.1.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        setInterval("refreshtemp1g();refreshtemp2g();refreshthiefg();refreshdetector1g();refreshdetector2g();refreshdetector3g()", 500);
+
+        /* Temperature */
+        function refreshtemp1g() {
+            $('#temp11g').load(location.href + ' #temp12g');
+            var temp1 = document.getElementById('temp12g').innerHTML;
+            document.getElementById('temp13g').innerHTML = temp1;
+        }
+
+        function refreshtemp2g() {
+            $('#temp21g').load(location.href + ' #temp22g');
+            var temp1 = document.getElementById('temp22g').innerHTML;
+            document.getElementById('temp23g').innerHTML = temp1;
+        }
+        /* Thief Alarm */
+        function refreshthiefg() {
+            $('#thiefalarm1g').load(location.href + ' #thiefalarm2g');
+            var text1 = document.getElementById('thiefalarm2g').innerHTML;
+            if (text1 == '1') {
+                document.getElementById('thiefalarm3g').style.backgroundColor = "#9b0000";
+            } else {
+                document.getElementById('thiefalarm3g').style.backgroundColor = "#009b19";
+            }
+        }
+        /* Detectors */
+        function refreshdetector1g() {
+            $('#detector11g').load(location.href + ' #detector21g');
+            var text1 = document.getElementById('detector21g').innerHTML;
+            if (text1 == '1') {
+                document.getElementById('detector31g').style.backgroundColor = "#9b0000";
+            } else {
+                document.getElementById('detector31g').style.backgroundColor = "#009b19";
+            }
+        }
+        function refreshdetector2g() {
+            $('#detector12g').load(location.href + ' #detector22g');
+            var text1 = document.getElementById('detector22g').innerHTML;
+            if (text1 == '1') {
+                document.getElementById('detector32g').style.backgroundColor = "#9b0000";
+            } else {
+                document.getElementById('detector32g').style.backgroundColor = "#009b19";
+            }
+        }
+        function refreshdetector3g() {
+            $('#detector13g').load(location.href + ' #detector23g');
+            var text1 = document.getElementById('detector23g').innerHTML;
+            if (text1 == '1') {
+                document.getElementById('detector33g').style.backgroundColor = "#9b0000";
+            } else {
+                document.getElementById('detector33g').style.backgroundColor = "#009b19";
+            }
+        }
+
+    </script>
+</head>
+<body class="bgadt">
+<div class="container-fluid">
+    <div class="row margintoprow1">
+        <div class="col-md-2 col-4">
+            <div class="tempraturegeneral shadow-lg">
+                <div hidden id="temp21g">
+                    <span hidden id="temp22g">:="general".Tsensor2:</span>
+                </div>
+                <span id="temp23g" class="tempdeggeneral"></span>
+                <span class="degsymbolgeneral1">0c</span>
+            </div>
+        </div>
+        <div class="col-md-2 col-4">
+            <div class="thiefgeneral shadow-lg">
+                <div class="thiefimg">
+                    <div class="thief"></div>
+                </div>
+                <div hidden id="thiefalarm1g">
+                    <span hidden id="thiefalarm2g">:="general".alarm1:</span>
+                </div>
+                <span id="thiefalarm3g" class="circle"></span>
+                <p>دزدگیر</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-4">
+            <div class="tempraturegeneral shadow-lg">
+                <div hidden id="temp11g">
+                    <span hidden id="temp12g">:="general".Tsensor1:</span>
+                </div>
+                <span id="temp13g" class="tempdeggeneral"></span>
+                <span class="degsymbolgeneral1">0c</span>
+            </div>
+        </div>
+        <div class="col-md-2 col-4 margintopdetector">
+            <div class="detectorgeneral shadow-lg">
+                <div class="thiefimg">
+                    <div class="detector"></div>
+                </div>
+                <div hidden id="detector13g">
+                    <span hidden id="detector23g">:="general".eye3:</span>
+                </div>
+                <span id="detector33g" class="circle"></span>
+                <p>ردیاب 3</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-4 margintopdetector">
+            <div class="detectorgeneral shadow-lg">
+                <div class="thiefimg">
+                    <div class="detector"></div>
+                </div>
+                <div hidden id="detector12g">
+                    <span hidden id="detector22g">:="general".eye2:</span>
+                </div>
+                <span id="detector32g" class="circle"></span>
+                <p>ردیاب 2</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-4 margintopdetector">
+            <div class="detectorgeneral shadow-lg">
+                <div class="thiefimg">
+                    <div class="detector"></div>
+                </div>
+                <div hidden id="detector11g">
+                    <span hidden id="detector21g">:="general".eye1:</span>
+                </div>
+                <span id="detector31g" class="circle"></span>
+                <p>ردیاب 1</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name='"general".setpointT1' -->
+
+<!-- AWP_In_Variable Name='"general".setpointT2' -->
+
+<!-- AWP_In_Variable Name='"general".setpointT3' -->
+
+<!-- AWP_In_Variable Name='"general".setpointT4' -->
+
+<!-- AWP_In_Variable Name='"general".setpointT5' -->
+
+<!-- AWP_In_Variable Name='"general".lamp1on' -->
+<!-- AWP_Enum_Def Name="lamp1gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp2on' -->
+<!-- AWP_Enum_Def Name="lamp2gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp3on' -->
+<!-- AWP_Enum_Def Name="lamp3gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp4on' -->
+<!-- AWP_Enum_Def Name="lamp4gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp5on' -->
+<!-- AWP_Enum_Def Name="lamp5gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp6on' -->
+<!-- AWP_Enum_Def Name="lamp6gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp7on' -->
+<!-- AWP_Enum_Def Name="lamp7gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp8on' -->
+<!-- AWP_Enum_Def Name="lamp8gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp9on' -->
+<!-- AWP_Enum_Def Name="lamp9gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".lamp10on' -->
+<!-- AWP_Enum_Def Name="lamp10gvalue" Values='0:"OFF", 1:"ON"' -->
+
+<!-- AWP_In_Variable Name='"general".windowopen' -->
+<!-- AWP_Enum_Def Name="windowgvalue" Values='0:"OFF", 1:"ON"' -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livingroom</title>
+    <link href="images/home-icon.png" rel="icon">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.v4.4.1.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/livingroom.js"></script>
+
+    <script>
+        /* Time */
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            // add a zero in front of numbers<10
+            m = checkTime(m);
+            document.getElementById('time').innerHTML = h + ":" + m;
+            t = setTimeout(function () {
+                startTime()
+            }, 500);
+        }
+
+        setTimeout(function () {
+
+            /* Lustres */
+            var lustre2 = document.getElementById('lustre22g').innerHTML;
+            if (lustre2 == 'ON') {
+                document.getElementById('lustre23g').style.backgroundColor = "#009b19";
+                document.getElementById('lustre25g').style.backgroundPosition = "65.7097% 0.0493218%";
+            } else {
+                document.getElementById('lustre23g').style.backgroundColor = "#9b0000";
+                document.getElementById('lustre25g').style.backgroundPosition = "65.1822% 0.0493218%";
+            }
+
+            var lustre1 = document.getElementById('lustre12g').innerHTML;
+            if (lustre1 == 'ON') {
+                document.getElementById('lustre13g').style.backgroundColor = "#009b19";
+                document.getElementById('lustre15g').style.backgroundPosition = "65.7097% 0.0493218%";
+            } else {
+                document.getElementById('lustre13g').style.backgroundColor = "#9b0000";
+                document.getElementById('lustre15g').style.backgroundPosition = "65.1822% 0.0493218%";
+            }
+
+            var lustre4 = document.getElementById('lustre42g').innerHTML;
+            if (lustre4 == 'ON') {
+                document.getElementById('lustre43g').style.backgroundColor = "#009b19";
+                document.getElementById('lustre45g').style.backgroundPosition = "65.7097% 0.0493218%";
+            } else {
+                document.getElementById('lustre43g').style.backgroundColor = "#9b0000";
+                document.getElementById('lustre45g').style.backgroundPosition = "65.1822% 0.0493218%";
+            }
+
+            var lustre3 = document.getElementById('lustre32g').innerHTML;
+            if (lustre3 == 'ON') {
+                document.getElementById('lustre33g').style.backgroundColor = "#009b19";
+                document.getElementById('lustre35g').style.backgroundPosition = "65.7097% 0.0493218%";
+            } else {
+                document.getElementById('lustre33g').style.backgroundColor = "#9b0000";
+                document.getElementById('lustre35g').style.backgroundPosition = "65.1822% 0.0493218%";
+            }
+
+            /* Curtain Hidden Light */
+            var curtainhlight = document.getElementById('curtainhlight2g').innerHTML;
+            if (curtainhlight == 'ON') {
+                document.getElementById('curtainhlight3g').style.backgroundColor = "#009b19";
+                document.getElementById('curtainhlight5g').style.backgroundPosition = "51.5848% 0.0506842%";
+            } else {
+                document.getElementById('curtainhlight3g').style.backgroundColor = "#9b0000";
+                document.getElementById('curtainhlight5g').style.backgroundPosition = "49.7328% 0.0506842%";
+            }
+
+            /* Hidden Light */
+            var hlight = document.getElementById('hlight2g').innerHTML;
+            if (hlight == 'ON') {
+                document.getElementById('hlight3g').style.backgroundColor = "#009b19";
+                document.getElementById('hlight5g').style.backgroundPosition = "51.5848% 0.0506842%";
+            } else {
+                document.getElementById('hlight3g').style.backgroundColor = "#9b0000";
+                document.getElementById('hlight5g').style.backgroundPosition = "49.7328% 0.0506842%";
+            }
+
+            /* Halogen */
+            var halogen = document.getElementById('halogen2g').innerHTML;
+            if (halogen == 'ON') {
+                document.getElementById('halogen3g').style.backgroundColor = "#009b19";
+                document.getElementById('halogen5g').style.backgroundPosition = "47.8807% 0.0506842%";
+            } else {
+                document.getElementById('halogen3g').style.backgroundColor = "#9b0000";
+                document.getElementById('halogen5g').style.backgroundPosition = "46.0286% 0.0506842%";
+            }
+
+            /* Curtain */
+            var curtain = document.getElementById('curtain2g').innerHTML;
+            if (curtain == 'ON') {
+                document.getElementById('curtain3g').style.backgroundColor = "#009b19";
+                document.getElementById('curtain5g').style.backgroundPosition = "44.1765% 0.0506842%";
+            } else {
+                document.getElementById('curtain3g').style.backgroundColor = "#9b0000";
+                document.getElementById('curtain5g').style.backgroundPosition = "42.3244% 0.0506842%";
+            }
+
+            /* Pillar lamp */
+            var Pillar = document.getElementById('pillarlight2g').innerHTML;
+            if (Pillar == 'ON') {
+                document.getElementById('pillarlight3g').style.backgroundColor = "#009b19";
+                document.getElementById('pillarlight5g').style.backgroundPosition = "55.2890% 0.0506842%";
+            } else {
+                document.getElementById('pillarlight3g').style.backgroundColor = "#9b0000";
+                document.getElementById('pillarlight5g').style.backgroundPosition = "53.4369% 0.0506842%";
+            }
+            /* Wall-lamp 2*/
+            var wlight2 = document.getElementById('wlight22g').innerHTML;
+            if (wlight2 == 'ON') {
+                document.getElementById('wlight23g').style.backgroundColor = "#009b19";
+                document.getElementById('wlight25g').style.backgroundPosition = "58.9932% 0.0506842%";
+            } else {
+                document.getElementById('wlight23g').style.backgroundColor = "#9b0000";
+                document.getElementById('wlight25g').style.backgroundPosition = "57.1411% 0.0506842%";
+            }
+            /* Wall-lamp 1*/
+            var wlight1 = document.getElementById('wlight12g').innerHTML;
+            if (wlight1 == 'ON') {
+                document.getElementById('wlight13g').style.backgroundColor = "#009b19";
+                document.getElementById('wlight15g').style.backgroundPosition = "58.9932% 0.0506842%";
+            } else {
+                document.getElementById('wlight13g').style.backgroundColor = "#9b0000";
+                document.getElementById('wlight15g').style.backgroundPosition = "57.1411% 0.0506842%";
+            }
+
+        }, 500);
+
+    </script>
+
+
+
+</head>
+<body onload="startTime()" class="bggeneral">
+<div class="kitchenheader">
+    <div class="generaltitle">اتاق پذیرایی</div>
+    <a href="index.html">
+        <div class="homepageimg">
+            <div class="homepage"></div>
+        </div>
+    </a>
+    <div class="time" id="time"></div>
+</div>
+<div class="container-fluid">
+    <iframe class="iframelivingroom" src="adtlivingroom.html">
+
+    </iframe>
+    <div class="row margintoprow1">
+        <div class="col-md-4 col-6">
+            <div class="setpointkitchen setpointkitchengm shadow-lg">
+                <div class="conditionerimg">
+                    <div class="air-conditioner"></div>
+                </div>
+                <div class="formsetpointkitchen">
+                    <form id="settemp13g" method="post" action="" onsubmit=" return check();">
+                        <button type="submit" class="settemp settempgm shadow-lg">ثبت</button>
+                        <input id="settemp23g" type="text" name=':="general".setpointT3:'
+                               class="inputtemp inputtempgm shadow-lg"
+                               placeholder="تنظیم دما">
+                    </form>
+                    <div class="tempkitchen">
+                        <div class="thermometergeneral thermometergeneralgm">
+                            <div class="thermometers"></div>
+                        </div>
+                        <span id="settemp33g" class="tempnumgeneral tempnumgeneralm"></span>
+                        <span class="degsymbolgeneral degsymbolgeneralm shadow-lg">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="setpointkitchen setpointkitchengm shadow-lg">
+                <div class="conditionerimg">
+                    <div class="air-conditioner"></div>
+                </div>
+                <div class="formsetpointkitchen">
+                    <form id="settemp12g" method="post" action="" onsubmit=" return check();">
+                        <button type="submit" class="settemp settempgm shadow-lg">ثبت</button>
+                        <input id="settemp22g" type="text" name=':="general".setpointT2:'
+                               class="inputtemp inputtempgm shadow-lg"
+                               placeholder="تنظیم دما">
+                    </form>
+                    <div class="tempkitchen">
+                        <div class="thermometergeneral thermometergeneralgm">
+                            <div class="thermometers"></div>
+                        </div>
+                        <span id="settemp32g" class="tempnumgeneral tempnumgeneralm"></span>
+                        <span class="degsymbolgeneral degsymbolgeneralm shadow-lg">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-0 col-6 offset-3 margintopgeneralrow1">
+            <div class="setpointkitchen setpointkitchengm shadow-lg">
+                <div class="conditionerimg">
+                    <div class="air-conditioner"></div>
+                </div>
+                <div class="formsetpointkitchen">
+                    <form id="settemp11g" method="post" action="" onsubmit=" return check();">
+                        <button type="submit" class="settemp settempgm shadow-lg">ثبت</button>
+                        <input id="settemp21g" type="text" name=':="general".setpointT1:'
+                               class="inputtemp inputtempgm shadow-lg"
+                               placeholder="تنظیم دما">
+                    </form>
+                    <div class="tempkitchen">
+                        <div class="thermometergeneral thermometergeneralgm">
+                            <div class="thermometers"></div>
+                        </div>
+                        <span id="settemp31g" class="tempnumgeneral tempnumgeneralm"></span>
+                        <span class="degsymbolgeneral degsymbolgeneralm shadow-lg">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margintoprow1">
+        <div class="adjust"></div>
+        <div class="col-md-2 col-8 marginright1 chandelierkitchen shadow-lg">
+            <div class="chandelierimg">
+                <div class="chandelier-on"></div>
+            </div>
+            <p>لوستر 1</p>
+            <div class="pol shadow-lg">
+                <div hidden id="lustre21g">
+                    <!-- AWP_Enum_Ref Name='"general".lamp2cmd' Enum="lamp2gvalue" -->
+                    <span id="lustre22g">:="general".lamp2cmd:</span>
+                </div>
+                <form id="lustre26g">
+                    <button id="lustre23g" type="submit" class="lamp2">
+                        <div class="lampimg">
+                            <div id="lustre25g" class="lamp-off"></div>
+                        </div>
+                        <div class="lamptext">لامپ 2</div>
+                        <input id="lustre24g" type="hidden" name='"general".lamp2on' value=""/>
+                    </button>
+                </form>
+                <div hidden id="lustre11g">
+                    <!-- AWP_Enum_Ref Name='"general".lamp1cmd' Enum="lamp1gvalue" -->
+                    <span id="lustre12g">:="general".lamp1cmd:</span>
+                </div>
+                <form id="lustre16g">
+                    <button id="lustre13g" type="submit" class="lamp1">
+                        <div class="lampimg">
+                            <div id="lustre15g" class="lamp-off"></div>
+                        </div>
+                        <div class="lamptext">لامپ 1</div>
+                        <input id="lustre14g" type="hidden" name='"general".lamp1on' value=""/>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 col-8 chandelierkitchen margintopform shadow-lg">
+            <div class="chandelierimg">
+                <div class="chandelier-on"></div>
+            </div>
+            <p>لوستر 2</p>
+            <div class="pol shadow-lg">
+                <div hidden id="lustre41g">
+                    <!-- AWP_Enum_Ref Name='"general".lamp4cmd' Enum="lamp4gvalue" -->
+                    <span id="lustre42g">:="general".lamp4cmd:</span>
+                </div>
+                <form id="lustre46g">
+                    <button id="lustre43g" type="submit" class="lamp2">
+                        <div class="lampimg">
+                            <div id="lustre45g" class="lamp-off"></div>
+                        </div>
+                        <div class="lamptext">لامپ 2</div>
+                        <input id="lustre44g" type="hidden" name='"general".lamp4on' value=""/>
+                    </button>
+                </form>
+                <div hidden id="lustre31g">
+                    <!-- AWP_Enum_Ref Name='"general".lamp3cmd' Enum="lamp3gvalue" -->
+                    <span id="lustre32g">:="general".lamp3cmd:</span>
+                </div>
+                <form id="lustre36g">
+                    <button id="lustre33g" type="submit" class="lamp1">
+                        <div class="lampimg">
+                            <div id="lustre35g" class="lamp-off"></div>
+                        </div>
+                        <div class="lamptext">لامپ 1</div>
+                        <input id="lustre34g" type="hidden" name='"general".lamp3on' value=""/>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div hidden id="curtainhlight1g">
+            <!-- AWP_Enum_Ref Name='"general".lamp7cmd' Enum="lamp7gvalue" -->
+            <span id="curtainhlight2g">:="general".lamp7cmd:</span>
+        </div>
+        <form id="curtainhlight6g" method="post" class="col-md-2 offset-md-0 col-5 offset-1">
+            <button id="curtainhlight3g" type="submit" class="hlightcurtaingeneral shadow-lg">
+                <div class="curtainimg">
+                    <div id="curtainhlight5g" class="hlight-off"></div>
+                </div>
+                <p>نور مخفی پرده</p>
+                <input id="curtainhlight4g" type="hidden" name='"general".lamp7on' value="" />
+            </button>
+        </form>
+        <div hidden id="hlight1g">
+            <!-- AWP_Enum_Ref Name='"general".lamp6cmd' Enum="lamp6gvalue" -->
+            <span id="hlight2g">:="general".lamp6cmd:</span>
+        </div>
+        <form id="hlight6g" method="post" class="col-md-2 col-5 margintopform">
+            <button id="hlight3g" type="submit" class="hlightgeneral shadow-lg">
+                <div class="curtainimg">
+                    <div id="hlight5g" class="hlight-off"></div>
+                </div>
+                <p>نور مخفی پذیرایی</p>
+                <input id="hlight4g" type="hidden" name='"general".lamp6on' value="" />
+            </button>
+        </form>
+        <div hidden id="halogen1g">
+            <!-- AWP_Enum_Ref Name='"general".lamp5cmd' Enum="lamp5gvalue" -->
+            <span id="halogen2g">:="general".lamp5cmd:</span>
+        </div>
+        <form id="halogen6g" method="post" class="col-md-2 offset-md-0 col-6 offset-3">
+            <button id="halogen3g" type="submit" class="halogen2kitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="halogen5g" class="halogen-off"></div>
+                </div>
+                <p>هالوژن</p>
+                <input id="halogen4g" type="hidden" name='"general".lamp5on' value="" />
+            </button>
+        </form>
+    </div>
+    <div class="row margintoprow1">
+        <div class="adjust"></div>
+        <div hidden id="curtain1g">
+            <!-- AWP_Enum_Ref Name='"general".openwindowcmd' Enum="windowgvalue" -->
+            <span id="curtain2g">:="general".lamp5cmd:</span>
+        </div>
+        <form id="curtain6g" method="post" class="col-md-2 offset-md-0 col-5 offset-1">
+            <button id="curtain3g" type="submit" class="curtainkitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="curtain5g" class="curtain-off"></div>
+                </div>
+                <p>پرده</p>
+                <input id="curtain4g" type="hidden" name='"general".windowopen' value="" />
+            </button>
+        </form>
+        <div hidden id="pillarlight1g">
+            <!-- AWP_Enum_Ref Name='"general".lamp10cmd' Enum="lamp10gvalue" -->
+            <span id="pillarlight2g">:="general".lamp10cmd:</span>
+        </div>
+        <form id="pillarlight6g" method="post" class="col-md-2 col-5 margintopform">
+            <button id="pillarlight3g" type="submit" class="pillarlightgeneral shadow-lg">
+                <div class="curtainimg">
+                    <div id="pillarlight5g" class="Pillar-lamp-off"></div>
+                </div>
+                <p>نور ستونی</p>
+                <input id="pillarlight4g" type="hidden" name='"general".lamp10on' value="" />
+            </button>
+        </form>
+        <div hidden id="wlight21g">
+            <!-- AWP_Enum_Ref Name='"general".lamp9cmd' Enum="lamp9gvalue" -->
+            <span id="wlight22g">:="general".lamp9cmd:</span>
+        </div>
+        <form id="wlight26g" method="post" class="col-md-2 offset-md-0 col-5 offset-1">
+            <button id="wlight23g" type="submit" class="halogen1kitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="wlight25g" class="wall-lamp-off"></div>
+                </div>
+                <p>نور دیواری 2</p>
+                <input id="wlight24g" type="hidden" name='"general".lamp9on' value="" />
+            </button>
+        </form>
+        <div hidden id="wlight11g">
+            <!-- AWP_Enum_Ref Name='"general".lamp8cmd' Enum="lamp8gvalue" -->
+            <span id="wlight12g">:="general".lamp8cmd:</span>
+        </div>
+        <form id="wlight16g" method="post" class="col-md-2 col-5 margintopform">
+            <button id="wlight13g" type="submit" class="halogen1kitchen shadow-lg">
+                <div class="curtainimg">
+                    <div id="wlight15g" class="wall-lamp-off"></div>
+                </div>
+                <p>نور دیواری 1</p>
+                <input id="wlight14g" type="hidden" name='"general".lamp8on' value="" />
+            </button>
+        </form>
+        <a href="192.168.1.2" target="_blank" class="col-md-2 offset-md-0 col-6 offset-3">
+            <div class="camerageneral shadow-lg">
+                <div class="cameraimg">
+                    <div class="camera"></div>
+                </div>
+                <p>دوربین</p>
+            </div>
+        </a>
+        <div class="col-1"></div>
+    </div>
+</div>
+</body>
+</html>
